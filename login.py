@@ -31,18 +31,18 @@ def led_green():
 #setting mqtt and message sending function
 client = mqtt.Client()
 def senddata(data, state):
-	client.connect('etu-web2.ut-capitole.fr', 1883)
-	client.subscribe('alij', qos=0)
+	client.connect('YOUR-MQTT-BROKER', 'YOUR-MQTT-BROKER-PORT')
+	client.subscribe('YOUR-TOPIC', qos=0)
 	print('\n sending data')
 	d = {"ID": data, "attempt": state}
 	djson = json.dumps(d)
-	client.publish('alij', djson)
+	client.publish('YOUR-TOPIC', djson)
 	client.disconnect()
 
 
 #setting mongodb database connection
-myclient = pymongo.MongoClient("etu-web2.ut-capitole.fr")
-db = myclient["bis_alij"]
+myclient = pymongo.MongoClient("YOUR MONGODB ADDRESS")
+db = myclient["DB-NAME"]
 user_col = db["users"]
 #setting rfid card reader
 PortRF = serial.Serial('/dev/ttyAMA0', 9600)
