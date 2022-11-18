@@ -8,6 +8,12 @@ pip3 install opencv-python
 pip3 install face_recognition
 pip3 install paho-mqtt
 ```
+### Setup of RPI 2:
+```
+sudo install python3
+sudo apt-get install python3-pip
+pip3 install paho-mqtt
+pip3 install python-telegram-bot
 
 
 
