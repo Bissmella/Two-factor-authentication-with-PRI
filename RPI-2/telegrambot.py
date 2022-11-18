@@ -10,8 +10,8 @@ myclient = pymongo.MongoClient("YOUR MONGODB ADDRESS")
 db = myclient["DB-NAME"]
 #logs collection in mongodb database
 log_col = db["logs"]
-api_key = '5610830737:AAFLlS30ZsJ3bvIuqHqcyykqqY2NWsby0Xg'
-user_id = '746524823'
+api_key = 'YOUR API KEY'
+user_id = 'YOUR TELEGRAM USER ID'
 #collection for telegram subscribers
 bot_col = db["telegram"]
 teles = bot_col.find()
